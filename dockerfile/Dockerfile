@@ -1,6 +1,6 @@
 FROM python:3.8-slim-buster
 
-LABEL MAINTAINER="@weidonggg"
+LABEL MAINTAINER="@yijiang"
 
 ENV GIT_BRANCH master
 ENV TIMEZONE Asia/Shanghai
@@ -34,9 +34,9 @@ RUN set -ex; \
                    libnss3; \
       \
       # clone jd seckill code.
-      git clone -b $GIT_BRANCH https://github.com/huanghyw/jd_seckill.git /app; \
-      cd /app \
-        && rm -rf .git; \
+      # git clone -b $GIT_BRANCH https://github.com/huanghyw/jd_seckill.git /app; \
+      # cd /app && rm -rf .git; \
+      cd /add && git pull;
       \
        \
         \
