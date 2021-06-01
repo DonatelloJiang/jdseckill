@@ -165,7 +165,7 @@ class Email():
         self.mail_user = mail_user
         self.is_login = False
         try:
-            smtpObj.connect(mail_host, 25)
+            smtpObj = smtplib.SMTP_SSL(mail_host, 465)
             smtpObj.login(mail_user, mail_pwd)
             self.is_login = True
         except Exception as e:

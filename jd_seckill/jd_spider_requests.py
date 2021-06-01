@@ -301,6 +301,8 @@ class JdTdudfp:
                                                                    '--no-sandbox', '--disable-setuid-sandbox'])
             page = await browser.newPage()
             await page.setViewport({"width": 1920, "height": 1080})
+            page.setDefaultNavigationTimeout(100000)
+
             await page.setUserAgent(self.user_agent)
             for key, value in self.cookies.items():
                 await page.setCookie({"domain": ".jd.com", "name": key, "value": value})
